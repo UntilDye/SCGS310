@@ -124,4 +124,6 @@ Email: dontlike299@gmail.com
 
 # 补充
 车牌识别模块可使用提供的yolo2,yolo3和CRNN自训练实现，也可使用license_plate_detector.py的预训练模型(自己整合到检测分析主系统里)
+
+
 **如有其他定制需求或内容细化，欢迎继续提出！**
