@@ -111,11 +111,13 @@ visualization.py	检测/跟踪/车牌/统计信息可视化叠加
 
 ```bash
 ```
-###参考资料
+
+## 参考资料
 YOLO 官方文档
 DeepSORT 论文及实现
 AIC-HCMC-2020 数据集
-###联系方式
+
+## 联系方式
 ###如有疑问或合作意向，欢迎联系：
 
 Email: dontlike299@gmail.com
