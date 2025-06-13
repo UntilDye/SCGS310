@@ -118,6 +118,7 @@ DeepSORT 论文及实现
 AIC-HCMC-2020 数据集
 
 ## 联系方式
-###如有疑问或合作意向，欢迎联系：
+
+如有疑问或合作意向，欢迎联系：
 
 Email: dontlike299@gmail.com
