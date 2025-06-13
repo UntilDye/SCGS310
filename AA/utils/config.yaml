@@ -1,0 +1,28 @@
+paths:
+  config: C:\code\AISYSTEM\YOLO\config.yaml
+  train: C:\code\AISYSTEM\YOLO\dataset\train
+  test: C:\code\AISYSTEM\YOLO\dataset\test
+  ckpt: C:\code\AISYSTEM\YOLO\trained_models
+  logs: C:\code\AISYSTEM\YOLO\TBLogs\YOLO3
+
+model:
+  nc: 1  # 类别数
+  s: 16  # 网络下采样倍数
+
+training:
+  factor: 0.5
+  momentum: 0.9
+  weight_decay: 5e-4
+  patience: 5
+  mode: 'min'
+  verbose: True
+
+  batch_size: 128
+  epochs: 100
+  lr: 0.001
+  img_size: 224
+  workers: 6
+
+testing:
+  batch_size: 128
+  workers: 0

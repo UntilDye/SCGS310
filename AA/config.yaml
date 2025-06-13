@@ -1,0 +1,74 @@
+# config.yaml
+dataset:
+  train: "C:/deterctor/A/data/aic_hcmc2020/images/train"
+  train_labels: "C:/deterctor/A/data/aic_hcmc2020/labels/train" 
+  val: "C:/deterctor/A/data/aic_hcmc2020/images/val"
+  val_labels: "C:/deterctor/A/data/aic_hcmc2020/labels/val"
+
+model:
+  num_classes: 4
+  input_size: [640, 640]
+  class_names: ['motorbike', 'car', 'bus', 'truck']
+
+training:
+  batch_size: 4  
+  val_batch_size: 16  
+  num_epochs: 150
+  learning_rate: 0.000005  # 初始学习率  
+  weight_decay: 0.0001    
+  
+  # 正则化参数
+  dropout_rate: 0.05
+  label_smoothing: 0.05
+  early_stopping_patience: 15
+  early_stopping_min_delta: 0.0005
+  reduce_lr_patience: 3
+  
+  size_penalty_weight: 0.02  
+  max_box_ratio: 0.5          
+  min_box_ratio: 0.001          
+  max_aspect_ratio: 5.0        
+
+  accumulate_grad_batches: 4  # 梯度累积
+  mixed_precision: true     #混合精度
+  
+  # 损失权重 
+  loss_weights:
+    box: 0.10 
+    obj: 1.0
+    cls: 0.5  
+
+  # 保存
+  save_model_path: "experiments/runs/models"
+  logs_dir: "experiments/runs/logs"
+  
+  # 防止过拟合的参数
+  num_workers: 4  
+  pin_memory: true
+  val_interval: 1
+  save_interval: 5
+
+detection:
+  conf_threshold: 0.3
+  iou_threshold: 0.6   # IOU阈值，用于过滤重叠框
+  nms_iou_threshold: 0.5  # NMS专用阈值，减少重复检测
+  vehicle_classes: [0, 1, 2, 3]
+
+filtering:
+  min_box_area: 100        # 最小面积
+  max_box_area: 500000     # 上限
+  min_aspect_ratio: 0.05   # 最小长宽比
+  max_aspect_ratio: 20.0   # 最大长宽比
+  min_confidence: 0.12     # 最小置信度
+
+tracking:
+  max_disappeared: 50      # 追踪保持时间
+  max_distance: 80         # 匹配距离
+  min_track_length: 3      # 最小追踪长度
+  
+counting:
+  counting_line:
+    - [[300, 200], [1200, 200]]
+    - [[50, 100], [350, 100]]
+  count_direction: "both"
+  cooldown_time: 2.0       # 冷却时间
