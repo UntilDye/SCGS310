@@ -63,14 +63,14 @@
 
 ```mermaid
 graph TD
-    A[视频输入] --> B[YOLO车辆检测]
-    B --> C[DeepSORT车辆跟踪]
-    C --> D[车牌检测与识别]
-    C --> E[车辆计数]
-    D --> F[识别结果可视化]
-    E --> F
-    F --> G[输出统计&处理后视频]
-
+  A[视频输入] --> B[YOLO车辆检测]
+  B --> C[DeepSORT车辆跟踪]
+  C --> D[车牌检测与识别]
+  C --> E[车辆计数]
+  D --> F[识别结果可视化]
+  E --> F
+  F --> G[输出统计&处理后视频]
+```
 
 ## 快速开始
 
@@ -81,6 +81,7 @@ python -m venv vehicle_count_env
 source vehicle_count_env/bin/activate
 pip install torch torchvision numpy opencv-python yolov5 deep_sort_realtime
 
+```
 # 安装依赖
 pip install torch torchvision numpy opencv-python yolov5 deep_sort_realtime
 ###2. 数据准备
@@ -108,7 +109,8 @@ visualization.py	检测/跟踪/车牌/统计信息可视化叠加
 #流量统计文件：如 flow_count.csv，记录各时间段车流量统计信息。
 #日志输出：终端实时输出统计信息。
 
-
+```bash
+```
 ###参考资料
 YOLO 官方文档
 DeepSORT 论文及实现
