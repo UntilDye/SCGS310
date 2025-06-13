@@ -56,6 +56,9 @@
 
 ---
 
+
+---
+
 ## 系统架构
 
 ```mermaid
@@ -68,42 +71,49 @@ graph TD
     E --> F
     F --> G[输出统计&处理后视频]
 
----
-快速开始
-1. 环境准备
 
-# 创建虚拟环境
+## 快速开始
+
+### 1. 环境准备
+
+```bash
 python -m venv vehicle_count_env
 source vehicle_count_env/bin/activate
+pip install torch torchvision numpy opencv-python yolov5 deep_sort_realtime
 
 # 安装依赖
 pip install torch torchvision numpy opencv-python yolov5 deep_sort_realtime
-2. 数据准备
-下载并解压 AIC-HCMC-2020 数据集 至 ./data/ 目录。
-准备测试视频，命名为 test_video.mp4，放在 ./data/。
-3. 车牌识别模块说明
+###2. 数据准备
+#下载并解压 AIC-HCMC-2020 数据集 至 ./data/ 目录。
+#准备测试视频，命名为 test_video.mp4，放在 ./data/。
+
+###3. 车牌识别模块说明
 车牌识别模块可使用 model 目录下的 YOLO2/YOLO3+CRNN 自训练模型，或直接集成 utils 目录下的预训练检测模块，灵活选择。
-4. 运行主程序
-直接运行主程序 video_analysis_test.py，底部有主要运行指令，可根据实际需求调整参数：
+###4. 运行主程序
+#直接运行主程序 video_analysis_test.py，底部有主要运行指令，可根据实际需求调整参数：
 
 
-python video_analysis_test.py --video ./data/test_video.mp4 --output ./results/output.mp4
-5. 主要模块说明
-模块文件	功能描述
+python video_analysis_test.py --video ./data/test_video.mp4 --output ./results/output.mp4...
+
+
+###5. 主要模块说明
+#模块文件	功能描述
 yolo_detector.py	YOLO 系列车辆目标检测接口
 deep_sort_tracker.py	DeepSORT 多目标跟踪与 ID 分配
 plate_recognition.py	车牌定位与字符识别（支持自训练或集成预训练模块）
 counter.py	车辆过线（区域）计数逻辑
 visualization.py	检测/跟踪/车牌/统计信息可视化叠加
-6. 输出内容
-可视化视频：每帧展示检测框、跟踪 ID、车牌号等信息，输出到 ./results/output.mp4。
-流量统计文件：如 flow_count.csv，记录各时间段车流量统计信息。
-日志输出：终端实时输出统计信息。
-参考资料
+###6. 输出内容
+#可视化视频：每帧展示检测框、跟踪 ID、车牌号等信息，输出到 ./results/output.mp4。
+#流量统计文件：如 flow_count.csv，记录各时间段车流量统计信息。
+#日志输出：终端实时输出统计信息。
+
+
+###参考资料
 YOLO 官方文档
 DeepSORT 论文及实现
 AIC-HCMC-2020 数据集
-联系方式
-如有疑问或合作意向，欢迎联系：
+###联系方式
+###如有疑问或合作意向，欢迎联系：
 
 Email: dontlike299@gmail.com
