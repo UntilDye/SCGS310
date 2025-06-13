@@ -84,4 +84,4 @@ visualization.py
 流量统计文件：统计不同时间段的车流量（如 flow_count.csv）。
 日志输出：实时在终端输出当前统计数据。
 
-#补充:车牌识别模块可根据model目录下提供的yolo2或yolo3与CRNN来自训练，或者使用utils目录下的检测模块(预训练模型)自己整合到检测系统。另外，运行指令在video_analysis_test.py文件底部.
+###补充:车牌识别模块可根据model目录下提供的yolo2或yolo3与CRNN来自训练，或者使用utils目录下的检测模块(预训练模型)自己整合到检测系统。另外，运行指令在video_analysis_test.py文件底部.
