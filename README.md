@@ -99,11 +99,11 @@ python video_analysis_test.py --video ./data/test_video.mp4 --output ./results/o
 
 ###  5. 主要模块说明
 模块文件	功能描述
-yolo_detector.py	YOLO 系列车辆目标检测接口
-deep_sort_tracker.py	DeepSORT 多目标跟踪与 ID 分配
-plate_recognition.py	车牌定位与字符识别（支持自训练或集成预训练模块）
-counter.py	车辆过线（区域）计数逻辑
-visualization.py	检测/跟踪/车牌/统计信息可视化叠加
+
+deepsort_tracker.py	DeepSORT 多目标跟踪与 ID 分配
+license_plate_detector.py	车牌定位与字符识别（支持自训练或集成预训练模块）
+traffic_counter.py	车辆过线（区域）计数逻辑
+
 ###  6. 输出内容
 可视化视频：每帧展示检测框、跟踪 ID、车牌号等信息，输出至 ./results/output.mp4
 流量统计文件：如 flow_count.csv，记录各时间段车流量统计信息
@@ -122,5 +122,6 @@ Email: dontlike299@gmail.com
 ##  免责声明
 本项目仅供学术交流与学习使用，禁止用于任何商业用途。请遵守相关法律法规，尊重数据隐私与版权。
 
-
+# 补充
+车牌识别模块可使用提供的yolo2,yolo3和CRNN自训练实现，也可使用license_plate_detector.py的预训练模型(自己整合到检测分析主系统里)
 **如有其他定制需求或内容细化，欢迎继续提出！**
